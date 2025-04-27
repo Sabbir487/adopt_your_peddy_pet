@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopt Your Peddy Pet</title>
+    <!-- Link CSS Style -->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- Framwork Style CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="lato">
+    <header class="w-11/12 md:w-10/12 mx-auto my-5 md:my-10 lg:my-14">
+        <nav class="flex justify-between items-center">
+            <div class="flex gap-2 md:gap-3 items-center cursor-pointer">
+                <img class="w-7 h-5 lg:w-10 lg:h-8" src="assets/logo.webp" alt="Peddy Logo">
+                <h2 class="text-2xl lg:text-5xl font-extrabold">Peddy</h2>
+            </div>
+            <div class="space-x-8 hidden md:block">
+                <button class="btn md:btn-md lg:btn-lg">Home</button>
+                <button class="btn md:btn-md lg:btn-lg">Shop</button>
+                <button class="btn md:btn-md lg:btn-lg">Contact</button>
+            </div>
+            <div>
+                <img class="w-8 lg:w-14 cursor-pointer" src="assets/user-avatar.png" alt="">
+            </div>
+        </nav>
+    </header>
+    <main class="w-11/12 md:w-10/12 mx-auto">
+        <!-- Adoption Section Start -->
+        <section class="md:mt-14">
+            <div class="text-center space-y-1  md:space-y-4 lg:space-y-6">
+                <h3 class="font-semibold text-sm md:font-bold md:text-2xl text-gray-500">Bringing Families Together
+                    ❤️‍🔥</h3>
+                <h1 class="font-black text-2xl md:text-4xl lg:text-7xl">Your Path to Adoption <br
+                        class="hidden md:block"> Starts Here</h1>
+                <p class="text-gray-600 text-xs md:text-base">It is a long established fact that a reader will be
+                    distracted by the
+                    readable content of a page when looking <br class="hidden md:block"> at its layout. The point of
+                    using Lorem Ipsum is that
+                    it has a.</p>
+            </div>
+            <div class="flex justify-center mt-5 md:mt-8">
+                <button class="btn lg:btn-lg btn-primary">View More</button>
+            </div>
+        </section>
+        <!-- Adopt Your Best Firend Section -->
+        <section class="flex flex-col justify-center items-center my-12">
+            <div class="-mt-8 md:mt-0">
+                <img src="assets/pet.webp" alt="">
+            </div>
+            <div class="text-center space-y-3 md:space-y-6 md:mt-12 lg:mt-24">
+                <h2 class="font-black text-2xl md:text-4xl">Adopt Your Best Friend</h2>
+                <p class="text-gray-400 text-xs md:text-base">It is a long established fact that a reader will be
+                    distracted by the readable content of a <br class="hidden md:block"> page when
+                    looking at its
+                    layout. The point of using Lorem Ipsum is that it has a.</p>
+            </div>
+        </section>
+    </main>
+    <footer class="flex  justify-evenly bg-black py-24 px-36">
+        <section>
+            <div class="flex gap-2 md:gap-3 items-center cursor-pointer mb-6">
+                <img class="w-7 h-5 lg:w-10 lg:h-8" src="assets/logo.webp" alt="Peddy Logo">
+                <h2 class="text-2xl lg:text-5xl text-white font-extrabold">Peddy</h2>
+            </div>
+            <div>
+                <ul class="text-gray-300 space-y-2">
+                    <li>Location: av. Washington 165, NY CA 54003</li>
+                    <li>Phone: +31 85 964 47 25</li>
+                    <li>Email: info@yourdomain.com</li>
+                    <li>Openings hours: 9.00 AM - 5.00 PM</li>
+                </ul>
+            </div>
+            <div class="flex gap-4 mt-2">
+                <img width="48" height="48" src="https://img.icons8.com/color/48/facebook-new.png" alt="facebook-new" />
+                <img width="48" height="48" src="https://img.icons8.com/color/48/twitter--v1.png" alt="twitter--v1" />
+                <img width="48" height="48" src="https://img.icons8.com/color/48/youtube-play.png" alt="youtube-play" />
+                <img width="48" height="48" src="https://img.icons8.com/color/48/instagram-new--v1.png"
+                    alt="instagram-new--v1" />
+            </div>
+        </section>
+        <section>
+            <h2 class="text-lg font-bold text-white mb-6">Useful Links</h2>
+            <ul class="text-gray-300 space-y-2">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Animals</a></li>
+                <li><a href="#">Foundation</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2 class="text-lg font-bold text-white mb-6">Drop a Message</h2>
+            <div>
+                <label class="input validator">
+                    <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none"
+                            stroke="currentColor">
+                            <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                        </g>
+                    </svg>
+                    <input type="email" placeholder="Enter your email" required />
+                </label>
+                <div class="validator-hint hidden">Enter valid email address</div>
+                <div>
+                    <button
+                        class="py-2 px-14 rounded-md mt-4 bg-emerald-600 font-bold text-xl text-white">Subscribe</button>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+    <!-- Dom Functionality JS File -->
+
+
+</body>
+
+</html>
