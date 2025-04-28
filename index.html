@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -24,8 +24,21 @@
                 <button class="btn md:btn-md lg:btn-lg">Shop</button>
                 <button class="btn md:btn-md lg:btn-lg">Contact</button>
             </div>
-            <div>
-                <img class="w-8 lg:w-14 cursor-pointer" src="assets/user-avatar.png" alt="">
+            <div class="hidden md:block">
+                <img class="w-8 lg:w-10 cursor-pointer" src="assets/user-avatar.png" alt="">
+            </div>
+            <div class="md:hidden relative">
+                <button popovertarget="popover-1">
+                    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/menu--v1.png"
+                        alt="menu--v1" />
+                </button>
+                <ul popover id="popover-1"
+                    class="absolute top-10 left-56 space-y-2 text-center bg-base-100 w-20 shadow-md rounded-lg py-3 ">
+                    <li><a>Profile</a></li>
+                    <li><a>Home</a></li>
+                    <li><a>Shop</a></li>
+                    <li><a>Contact</a></li>
+                </ul>
             </div>
         </nav>
     </header>
@@ -37,31 +50,52 @@
                     ❤️‍🔥</h3>
                 <h1 class="font-black text-2xl md:text-4xl lg:text-7xl">Your Path to Adoption <br
                         class="hidden md:block"> Starts Here</h1>
-                <p class="text-gray-600 text-xs md:text-base">It is a long established fact that a reader will be
-                    distracted by the
-                    readable content of a page when looking <br class="hidden md:block"> at its layout. The point of
-                    using Lorem Ipsum is that
-                    it has a.</p>
+                <p class="text-gray-600 text-xs md:text-base">Adopt a paddy pet from our website and add a bundle
+                    of joy <br class="hidden md:block">
+                    to your life! 🌾🐾 Our charming paddies are waiting to be part of your family. <br
+                        class="hidden md:block"> Easy to adopt and
+                    full of love, they’ll bring warmth, smiles, and endless happy moments. <br class="hidden md:block">
+                    Find your perfect paddy
+                    companion today — your new best friend is just a click away!</p>
             </div>
             <div class="flex justify-center mt-5 md:mt-8">
-                <button class="btn lg:btn-lg btn-primary">View More</button>
+                <button class="btn btnColor btn-sm md:text-lg text-xs md:btn-lg text-white">View More</button>
             </div>
         </section>
         <!-- Adopt Your Best Firend Section -->
-        <section class="flex flex-col justify-center items-center my-12">
+        <section class="flex flex-col justify-center items-center mt-8 mb-5 md:my-12">
             <div class="-mt-8 md:mt-0">
                 <img src="assets/pet.webp" alt="">
             </div>
             <div class="text-center space-y-3 md:space-y-6 md:mt-12 lg:mt-24">
                 <h2 class="font-black text-2xl md:text-4xl">Adopt Your Best Friend</h2>
-                <p class="text-gray-400 text-xs md:text-base">It is a long established fact that a reader will be
-                    distracted by the readable content of a <br class="hidden md:block"> page when
-                    looking at its
-                    layout. The point of using Lorem Ipsum is that it has a.</p>
+                <p class="text-gray-400 text-xs md:text-base">A pet is not just an animal — they are your best friend,
+                    your partner in joy, <br class="hidden md:block"> and your companion for life. 🐾❤️ Adopt a paddy
+                    pet from our website and <br class="hidden md:block">
+                    experience a bond filled with love, laughter, and endless memories. <br class="hidden md:block">
+                    Come, find your new best friend
+                    today, and start a beautiful journey together!</p>
+            </div>
+        </section>
+        <!-- Dynamic Category Button Section -->
+        <section id="categoryContainer" class="flex md:gap-7 gap-3 justify-center md:mb-8">
+
+        </section>
+        <!-- Best Deal Sort Section -->
+        <section class="my-8 flex justify-between">
+            <h2 class="md:text-2xl font-semibold md:font-black">Best Deal For you</h2>
+            <button class="btn text-xs md:text-lg font-bold rounded-lg btn-sm md:py-5 md:px-8 btnColor text-white">Sort
+                by
+                Price</button>
+        </section>
+        <!-- Peddy Pet Dynamicaly Making Card Section -->
+        <section>
+            <div>
+
             </div>
         </section>
     </main>
-    <footer class="flex  justify-evenly bg-black py-24 px-36">
+    <!-- <footer class="flex  justify-evenly bg-black py-24 px-36">
         <section>
             <div class="flex gap-2 md:gap-3 items-center cursor-pointer mb-6">
                 <img class="w-7 h-5 lg:w-10 lg:h-8" src="assets/logo.webp" alt="Peddy Logo">
@@ -113,10 +147,12 @@
                 </div>
             </div>
         </section>
-    </footer>
+    </footer> -->
 
     <!-- Dom Functionality JS File -->
-
+    <script src="js/loadData.js"></script>
+    <script src="js/displayData.js"></script>
+    <script src="js/utility.js"></script>
 
 </body>
 
