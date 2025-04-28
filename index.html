@@ -7,6 +7,10 @@
     <title>Adopt Your Peddy Pet</title>
     <!-- Link CSS Style -->
     <link rel="stylesheet" href="styles/style.css">
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Framwork Style CDN -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -59,7 +63,8 @@
                     companion today — your new best friend is just a click away!</p>
             </div>
             <div class="flex justify-center mt-5 md:mt-8">
-                <button class="btn btnColor btn-sm md:text-lg text-xs md:btn-lg text-white">View More</button>
+                <button onclick="document.getElementById('cardSection').scrollIntoView({ behavior: 'smooth' });"
+                    class="btn btnColor btn-sm md:text-lg text-xs md:btn-lg text-white">View More</button>
             </div>
         </section>
         <!-- Adopt Your Best Firend Section -->
@@ -89,10 +94,9 @@
                 Price</button>
         </section>
         <!-- Peddy Pet Dynamicaly Making Card Section -->
-        <section>
-            <div>
-
-            </div>
+        <section id="cardSection" class="flex gap-6">
+            <div id="cardContainer" class="grid grid-cols-3 gap-7"></div>
+            <div class="bg-base-100 p-2 w-96 rounded-lg border border-gray-300"></div>
         </section>
     </main>
     <!-- <footer class="flex  justify-evenly bg-black py-24 px-36">
