@@ -17,7 +17,7 @@
 </head>
 
 <body class="lato">
-    <header class="w-11/12 md:w-10/12 mx-auto my-5 md:my-10 lg:my-14">
+    <header class="w-11/12 lg:w-10/12 mx-auto my-5 md:my-10 lg:my-14">
         <nav class="flex justify-between items-center">
             <div class="flex gap-2 md:gap-3 items-center cursor-pointer">
                 <img class="w-7 h-5 lg:w-10 lg:h-8" src="assets/logo.webp" alt="Peddy Logo">
@@ -46,7 +46,7 @@
             </div>
         </nav>
     </header>
-    <main class="w-11/12 md:w-10/12 mx-auto">
+    <main class="w-11/12 lg:w-10/12 mx-auto">
         <!-- Adoption Section Start -->
         <section class="md:mt-14">
             <div class="text-center space-y-1  md:space-y-4 lg:space-y-6">
@@ -63,7 +63,7 @@
                     companion today — your new best friend is just a click away!</p>
             </div>
             <div class="flex justify-center mt-5 md:mt-8">
-                <button onclick="document.getElementById('cardSection').scrollIntoView({ behavior: 'smooth' });"
+                <button onclick="document.getElementById('sortPrice').scrollIntoView({ behavior: 'smooth' });"
                     class="btn btnColor btn-sm md:text-lg text-xs md:btn-lg text-white">View More</button>
             </div>
         </section>
@@ -89,7 +89,7 @@
         <!-- Best Deal Sort Section -->
         <section class="my-8 flex justify-between">
             <h2 class="md:text-2xl font-semibold md:font-black">Best Deal For you</h2>
-            <button id="sortPrice"
+            <button id="sortPrice" onclick="sort()"
                 class="btn text-xs md:text-lg font-bold rounded-lg btn-sm md:py-5 md:px-8 btnColor text-white">Sort
                 by
                 Price</button>
@@ -107,10 +107,21 @@
                     <!-- Cards -->
                     <div id="cardContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7"></div>
                 </div>
-                <div class="md:col-span-1 bg-base-100 rounded-lg border border-gray-300">
-
+                <div id="liked_btn" class="grid grid-cols-2 w-full h-fit rounded-xl gap-2 p-3 border border-gray-300">
                 </div>
             </div>
+        </section>
+        <!-- Adopt Card Modal -->
+        <section>
+            <dialog id="modalContainer" class="modal">
+                <div class="modal-box text-center space-y-4">
+                    <i class="fa-regular fa-handshake text-teal-600 text-4xl md:text-6xl mt-5"></i>
+                    <h2 class="md:text-3xl text-2xl text-center font-bold">Congratulations!</h2>
+                    <p class="md:text-lg text-xs text-gray-500 font-semibold">Adaption process will done in 3 Second!
+                    </p>
+                    <h3 id="adopt_count" class="md:text-5xl text-4xl font-bold mb-5">3</h3>
+                </div>
+            </dialog>
         </section>
     </main>
     <!-- <footer class="flex  justify-evenly bg-black py-24 px-36">

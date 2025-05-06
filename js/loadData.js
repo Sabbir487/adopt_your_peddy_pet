@@ -17,6 +17,7 @@ const loadAllPet = async () => {
         const data = await res.json();
         setTimeout(() => {
             displayAllPet(data.pets);
+            petsData = data.pets;
             loadSpinner(false);
         }, 2000)
     }
@@ -36,8 +37,20 @@ const loadCategoryPage = async (id) => {
         const data = await res.json();
         setTimeout(() => {
             displayAllPet(data.data);
+            petsData = data.data;
             loadSpinner(false);
         }, 2000)
+    }
+    catch {
+        (error) => console.error("Error fetching categories:", error)
+    }
+}
+
+// Load Pets Data By Details Api
+const loadDetails = async (id) => {
+    try {
+        const res = await fetch(`https://openapi.programming-hero.com/api/peddy/pet/${id}`);
+        const data = await res.json();
     }
     catch {
         (error) => console.error("Error fetching categories:", error)

@@ -12,9 +12,25 @@ const displayCategories = (categories) => {
         categoryContainer.appendChild(div);
     })
 }
+
 // Display All Peddy Pet Here Like a Card
 const displayAllPet = (pets) => {
     const cardContainer = document.getElementById("cardContainer");
+    if (pets.length === 0) {
+        cardContainer.classList.remove("grid");
+        cardContainer.innerHTML = `
+        <div class="bg-gray-100 lg:p-24 md:p-12 p-4 rounded-xl text-center space-y-2 md:space-y-4">
+            <img class="mx-auto mb-4 w-20 md:w-32 lg:w-40" src="./assets/error.webp"/>
+            <h2 class="font-bold text-xl md:text-3xl">No Information Available</h2>
+            <p class="text-gray-500 lg:px-40 text-xs md:text-base">This page currently does not contain any information. We are working on updating it soon. Please check back later for the latest content. Thank you for your patience.</p>
+
+        </div>
+        `;
+        return
+    }
+    else {
+        cardContainer.classList.add("grid");
+    }
     pets.forEach((pet) => {
         const cardDiv = document.createElement("div");
         cardDiv.innerHTML = `
@@ -39,13 +55,33 @@ const displayAllPet = (pets) => {
             </div>
             <hr class="text-gray-300 pb-4">
             <div class="flex items-center justify-between px-2">
-                <button class="btn py-1 px-4 pxtext-lg rounded-md border bg-white border-teal-600 hover:text-teal-600 font-bold cursor-pointer"> <i class="fa-solid fa-thumbs-up"></i>
+                <button onclick="likedButton('${pet.image}')" class="btn py-1 px-4 pxtext-lg rounded-md border bg-white border-teal-600 hover:text-teal-600 font-bold cursor-pointer"> <i class="fa-solid fa-thumbs-up"></i>
                 </button>
-                <button class="btn py-1 px-4 font-bold text-lg rounded-md border border-teal-600 text-teal-600 hover:bg-teal-600 hover:text-white cursor-pointer disabled:bg-slate-500 disabled:text-gray-600">Adopt</button>
-                <button class="btn py-1 px-4 font-bold text-lg rounded-md border border-teal-600 text-teal-600 hover:bg-teal-600 hover:text-white cursor-pointer disabled:bg-slate-500 disabled:text-gray-600">Details</button>
+                <button onclick="adoptModal(this)" class="btn py-1 px-4 font-bold text-lg rounded-md border border-teal-600 text-teal-600 hover:bg-teal-600 hover:text-white cursor-pointer disabled:bg-slate-500 disabled:text-gray-600">Adopt</button>
+                <button onclick="loadDetails('${pet.petId}')" class="btn py-1 px-4 font-bold text-lg rounded-md border border-teal-600 text-teal-600 hover:bg-teal-600 hover:text-white cursor-pointer disabled:bg-slate-500 disabled:text-gray-600">Details</button>
             </div>
         </div>
         `;
         cardContainer.appendChild(cardDiv);
     })
+}
+
+// Adopt Modal Will Show Here
+const adoptModal = (id) => {
+    let count = 3;
+    const adoptCount = document.getElementById("adopt_count");
+    adoptCount.innerText = count;
+    modalContainer.showModal();
+    const adoptInterval = setInterval(() => {
+        count--
+        if (count !== 0) {
+            adoptCount.innerText = count;
+        }
+        if (count < 1) {
+            clearInterval(adoptInterval);
+            modalContainer.close();
+            id.textContent = "Adopted";
+            id.disabled = true;
+        }
+    }, 1000)
 }
