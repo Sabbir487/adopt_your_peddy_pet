@@ -21,5 +21,17 @@ const loadAllPet = async () => {
     }
 }
 
+// Load Category Based Page
+const loadCategoryPage = async (id) => {
+    try {
+        const res = await fetch(`https://openapi.programming-hero.com/api/peddy/category/${id}`);
+        const data = await res.json();
+        displayAllPet(data.data);
+    }
+    catch {
+        (error) => console.error("Error fetching categories:", error)
+    }
+}
+
 loadCategories()
 loadAllPet()
