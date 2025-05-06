@@ -96,14 +96,19 @@
         </section>
         <!-- Peddy Pet Dynamicaly Making Card Section -->
         <section class="my-10">
-            <div class="grid grid-cols-1 md:grid-cols-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-7">
                 <div class="md:col-span-3">
                     <!-- Spinner -->
-                    <div></div>
+                    <div id="spinner" class="hidden">
+                        <div class="flex justify-center items-center">
+                            <span class="loading loading-bars loading-xl"></span>
+                        </div>
+                    </div>
                     <!-- Cards -->
                     <div id="cardContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7"></div>
                 </div>
                 <div class="md:col-span-1 bg-base-100 rounded-lg border border-gray-300">
+
                 </div>
             </div>
         </section>
@@ -163,9 +168,9 @@
     </footer> -->
 
     <!-- Dom Functionality JS File -->
+    <script src="js/utility.js"></script>
     <script src="js/loadData.js"></script>
     <script src="js/displayData.js"></script>
-    <script src="js/utility.js"></script>
 
 </body>
 

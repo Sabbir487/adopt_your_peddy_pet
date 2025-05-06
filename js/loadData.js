@@ -11,10 +11,14 @@ const loadCategories = async () => {
 }
 // Load All Peddy Pet Here Like a Card
 const loadAllPet = async () => {
+    loadSpinner(true);
     try {
         const res = await fetch(`https://openapi.programming-hero.com/api/peddy/pets`);
         const data = await res.json();
-        displayAllPet(data.pets);
+        setTimeout(() => {
+            displayAllPet(data.pets);
+            loadSpinner(false);
+        }, 2000)
     }
     catch {
         (error) => console.error("Error fetching categories:", error)
@@ -23,10 +27,17 @@ const loadAllPet = async () => {
 
 // Load Category Based Page
 const loadCategoryPage = async (id) => {
+    activeBtnRemove()
+    const activeBtn = document.getElementById(`btn-${id}`);
+    activeBtn.classList.add("active");
+    loadSpinner(true);
     try {
         const res = await fetch(`https://openapi.programming-hero.com/api/peddy/category/${id}`);
         const data = await res.json();
-        displayAllPet(data.data);
+        setTimeout(() => {
+            displayAllPet(data.data);
+            loadSpinner(false);
+        }, 2000)
     }
     catch {
         (error) => console.error("Error fetching categories:", error)

@@ -4,7 +4,7 @@ const displayCategories = (categories) => {
     categories.forEach((item) => {
         const div = document.createElement("div");
         div.innerHTML = `
-        <button onclick="loadCategoryPage('${item.category}')" class="btn btn-xs lg:py-9 md:py-5 md:px-9 lg:px-28 md:text-lg lg:text-2xl md:font-bold">
+        <button id="btn-${item.category}" onclick="loadCategoryPage('${item.category}')" class="btn category-btn btn-xs lg:py-9 md:py-5 md:px-9 lg:px-28 md:text-lg lg:text-2xl md:font-bold">
             <img class="lg:w-7 w-4 h-4 lg:h-7" src="${item.category_icon}"/>
             <p>${item.category}</p>
         </button>
@@ -15,7 +15,6 @@ const displayCategories = (categories) => {
 // Display All Peddy Pet Here Like a Card
 const displayAllPet = (pets) => {
     const cardContainer = document.getElementById("cardContainer");
-    cardContainer.innerHTML = "";
     pets.forEach((pet) => {
         const cardDiv = document.createElement("div");
         cardDiv.innerHTML = `
@@ -50,5 +49,3 @@ const displayAllPet = (pets) => {
         cardContainer.appendChild(cardDiv);
     })
 }
-
-// Display Category Based Page
