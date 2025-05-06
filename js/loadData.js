@@ -51,6 +51,7 @@ const loadDetails = async (id) => {
     try {
         const res = await fetch(`https://openapi.programming-hero.com/api/peddy/pet/${id}`);
         const data = await res.json();
+        displayPetDetails(data.petData)
     }
     catch {
         (error) => console.error("Error fetching categories:", error)

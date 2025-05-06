@@ -85,3 +85,45 @@ const adoptModal = (id) => {
         }
     }, 1000)
 }
+
+// Dynamically Adding Pet Details Modal
+const displayPetDetails = (item) => {
+    const detailsModalContainer = document.getElementById("detailsModalContainer");
+    detailsModalContainer.innerHTML = `
+    <div class="">
+        <div>
+            <img class="rounded-lg mx-auto w-full object-cover" src="${item.image}" alt="">
+        </div>
+        <h2 class="text-xl font-bold pt-2">${item.pet_name ?? 'Not Available'}</h2>
+        <div class="flex justify-between mb-4 mt-2">
+            <div>
+                <h4 class="flex items-center text-sm md:text-base gap-2 text-gray-500 font-semibold">
+                    <i class="fa-solid fa-paw"></i> Breed: ${item?.breed ?? `It's Not Available`}
+                </h4>
+                <h4 class="flex items-center text-sm md:text-base gap-1 text-gray-500 font-semibold">
+                    <i class="fa-solid fa-transgender"></i> Gender: ${item.gender ?? "It's Not Defined"}
+                </h4>
+                <h4 class="flex items-center text-sm md:text-base gap-1 text-gray-500 font-semibold">
+                    <i class="fa-solid fa-transgender"></i> Vaccinated status: ${item.vaccinated_status ?? 'Not Available'}
+                </h4>
+            </div>
+
+            <div>
+                <h4 class="flex items-center text-sm md:text-base gap-3 text-gray-500 font-semibold">
+                    <i class="fa-regular fa-calendar"></i> Birth: ${item.date_of_birth?.slice(0, 4) ?? "Date is Not Available"}
+                </h4>
+                <h4 class="flex items-center text-sm md:text-base gap-3 text-gray-500 font-semibold pb-2">
+                    <i class="fa-solid fa-dollar-sign"></i> Price: ${item.price ? item.price + '$' : "Coming Soon"}
+                </h4>
+            </div>
+        </div>
+        <hr class="text-gray-300">
+        <div>
+            <h2 class="text-xl font-bold pt-2">Details Information</h2>
+            <p class="text-gray-500">${item.pet_details ?? 'Details is Not Available'}</p>
+        </div>
+    </div>
+    `;
+
+    my_modal_5.showModal()
+}
